@@ -1,0 +1,141 @@
+p.calintro {
+	font-weight			: bold;
+}
+
+div.calbreak {
+	clear						: left;
+	border-bottom		: 1px dashed <?=$clr_light;?>;
+	padding					: 5px;
+}
+
+.history , .history a {
+	color				: <?=$clr_sub_font;?>;
+}
+
+table.calitem td.date {
+	white-space:nowrap; 
+}
+
+table.calitem td.main {
+	width 		: 100%;
+}
+
+table.calitem {
+	width : 100%;
+}
+
+table.calitem tr.disabled , table.calitem tr.disabled a {
+	color				: <?=$clr_sub_font;?>;
+}
+table.calitem tr.disabled a:hover {
+	color				: <?=$clr_font;?>;
+}
+
+.hiscomment {
+	padding-left : 10px;
+	font-weight : bold;
+}
+
+div.calbreak hr {
+	display					: none;
+}
+
+div.calmain em {
+	color						: <?=$clr_light;?>;
+	color						: <?=$clr_sub_dark;?>;
+}
+
+div.calimage {
+	margin					: 10px 0 10px 0;
+	text-align			: center;
+}
+
+a.calimg {
+	margin					: 0;
+	padding					: 0;
+}
+
+a.calimg img{
+	border					: 1px solid <?=$clr_dark;?>;
+	display					: inline;
+	margin					: 0px;
+	padding					: 0;
+}
+
+a.calimg:hover img{
+	border					: 1px solid <?=$clr_sub_dark;?>;
+}
+
+div.calimg img {
+	float						: left;
+	border					: 1px solid <?=$clr_dark;?>;
+	margin-right		: 5px;
+}
+div.calimg a:hover img {
+	border					: 1px solid <?=$clr_sub_dark;?>;
+}
+
+div.calitem h2 a {
+	text-decoration		: none;
+}
+
+table.calitem {
+}
+
+table.calitem td {
+	padding						: 1px 0 1px 0;
+}
+
+table.calitem td.date {
+	padding						: 1px 10px 1px 0;
+}
+
+.intro {
+	font-weight				: bold;
+}
+
+.calendar {
+	clear						: left;
+	border-bottom		: 1px dashed <?=$clr_dark;?>;
+	/*background-color	: <?=$clr_light;?>;*/
+	margin						: 0;
+	padding						: 20px 5px 0 5px;
+	font-size					: 1.2em;
+}
+div.cmtitem {
+	border						: 1px solid <?=$clr_dark;?>;
+	margin						: 0 0 10px 0;
+	padding						: 5px;
+	background-color	: <?=$clr_site;?>;
+}
+
+h3.cmtname {
+	font-weight 		: strong;
+	padding						: 2px 5px 2px 5px;
+	border-top						: 1px solid <?=$clr_dark;?>;
+	border-right						: 1px solid <?=$clr_dark;?>;
+	border-left						: 1px solid <?=$clr_dark;?>;
+	background-color	: <?=$clr_light;?>;
+	margin-bottom			: 0;
+	margin-right			: 0;
+	margin-left			: 0;
+}
+
+h3.cmtname span.cmtdate {
+	font-weight 		: normal;
+	font-style			: italic;
+	margin-left			: 10px;
+	font-size				: 11px;
+}
+
+div#cmtadd {
+	margin						: 10px 0 10px 0;
+	border						: 1px solid <?=$clr_sub_dark;?>;
+	background-color	: <?=$clr_sub_light;?>;
+	padding						: 5px;
+}
+
+h2#cmttitle {
+	margin-top				:20px;
+}
+

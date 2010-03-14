@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<Datasources>
+	<RPC id="callrpc" protocol="XMLRPC" url="/xmlrpc" multicall="false" retry="3">
+		<method name="Banner.getRandom" receive="getRpcResult" />
+		<method name="Banner.getLinear" receive="getRpcResult" />
+	</RPC>
+</Datasources>

@@ -1,0 +1,18 @@
+#<?=$cssid;?>, #<?=$cssid;?> ul { /* all lists */
+	margin						: 0;
+	padding						: 0;
+	width						: <?=$menu_width;?>;
+}
+
+#<?=$cssid;?> li { /* all list items */
+	list-style-type	: none;
+	width						: <?=$menu_width;?>;
+	margin					: 0 0 -1px 0;
+	padding					: 0;
+	line-height			: <?=$menu_line_height;?>;
+	border					: none;
+}
+
+#<?=$cssid;?> li a {
+	<?if(isset($menu_item_width) && $menu_item_width):?>width					: <?=$menu_item_width;?>;<?endif;?> 
+}

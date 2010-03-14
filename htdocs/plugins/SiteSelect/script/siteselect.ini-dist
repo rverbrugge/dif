@@ -1,0 +1,7 @@
+; flag images of different sites
+[images]
+be = flags/24/b/Belgium.png,24,24
+nl = flags/24/n/Netherlands.png,24,24
+en = "flags/24/u/United Kingdom(Great Britain).png",24,24
+fr = flags/24/f/France.png,24,24
+de = flags/24/g/Germany.png,24,24

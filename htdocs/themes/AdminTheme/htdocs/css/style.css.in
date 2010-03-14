@@ -1,0 +1,338 @@
+/*------ default settings {{{-------*/
+body {
+	font-family				: Arial, sans-serif;
+	font-size					: 12px;
+	background-color	: <?=$clr_html;?>;
+	color							: #989da5;
+	color				: #464c55;
+	color							: #5b616b;
+	margin						: 0;
+	padding						: 0;
+}
+
+.noborder {
+	border					: none;
+	background-color	: transparent;
+}
+
+h1 {
+	margin						: 10px 0 7px 0;
+	font-size					: 18px;
+	color							: #5b616b;
+}
+
+h3 {
+	margin						: 5px 0 2px 0;
+	font-size					: 12px;
+	color							: #5b616b;
+}
+
+em.subtitle {
+	color							: #989da5;
+}
+
+
+a {
+	color							: #464c55;
+	text-decoration		: underline;
+}
+
+a:hover {
+	text-decoration		: none;
+}
+
+a img {
+	border						: 1px solid #464c55;
+}
+
+ul {
+	padding						: 5px 5px 5px 13px;
+	margin						: 5px 5px 5px 13px;
+}
+
+li {
+	list-style-type		: square;
+	padding						: 2px;
+}
+
+.small {
+	font-size					: 11px;
+}
+
+.normal {
+	font-weight				: normal;
+}
+
+/*}}}*/
+
+/*------ menu {{{-------*/
+div#menu ul {
+	list-style-type		: none;
+	margin						: 0;
+	padding						: 0;
+}
+
+div#menu ul li {
+	display						: inline;
+	padding						: 0 5px 0 5px;
+}
+
+div#menu a {
+	font-size					: 13px;
+	text-decoration		: none;
+	padding						: 7px 10px 7px 0px;
+	color							: #fff;
+	font-weight				: bold;
+}
+
+div#menu a:hover, div#menu a.selected {
+	color				: <?=$clr_font;?>
+}
+/*}}}*/
+
+/*------ header {{{-------*/
+div#header {
+	padding							: 10px 0 0 10px;
+	height							: 87px;
+	color								: <?=$clr_sub_font;?>;
+	background-image		: url(<?=$path;?>images/bg_header.png);
+	background-position	: bottom left;
+	background-repeat		: repeat-x;
+	background-color		: <?=$clr_sub_dark;?>;
+	border-bottom				: 1px solid <?=$clr_dark;?>;
+}
+
+div#header img {
+}
+
+div#header h1 {
+	font-size					: 35px;
+	margin						: 5px 0 18px 0;
+	color							: #fff;
+}
+div#header em {
+	font-weight : normal;
+	color				: <?=$clr_sub_font;?>;
+	font-size		: 12px;
+}
+div#header strong {
+	padding			: 0 5px;
+	font-size					: 16px;
+	color				: <?=$clr_font;?>;
+}
+
+div.pane {
+	background-image		: url(<?=$path;?>images/bg_pane.png);
+	background-position	: top right;
+	background-repeat		: repeat-y;
+}
+
+div#logo {
+	float							: right;
+	margin-right			: 10px;
+}
+div#logo img {
+	border						: none;
+}
+
+/*}}}*/
+
+/*------ breadcrumb {{{-------*/
+p.options {
+	background-color	: <?=$clr_dark;?>;
+	background-image		: url(<?=$path;?>images/bg_heading.png);
+	background-position	: bottom left;
+	background-repeat		: repeat-x;
+	border-bottom						: 1px solid <?=$clr_dark;?>;
+
+	background-color	: <?=$clr_light;?>;
+	border						: 1px solid <?=$clr_dark;?>;
+	background-image		: url(<?=$path;?>images/bg_pane.png);
+	background-position	: top right;
+	background-repeat		: repeat-y;
+	padding							: 5px;
+}
+
+/*}}}*/
+
+/*------ breadcrumb {{{-------*/
+div#breadcrumb {
+	font-size						: 11px;
+	padding							: 5px 10px 10px 10px;
+	color								: #989da5;
+}
+div#breadcrumb a {
+	color				: #989da5;
+}
+div#breadcrumb a:hover {
+	color				: #5b616b;
+}
+/*}}}*/
+
+/*------ pagenav {{{-------*/
+.pagenav .selected {
+	font-weight						: bold;
+	margin								: 0 4px 0 4px;
+	padding								: 0 2px;
+}
+.pagenav a {
+	font-weight						: normal;
+	margin								: 0 4px 0 4px;
+	padding								: 0 2px;
+}
+
+/*}}}*/
+
+div#content {
+	padding							: 0 10px 10px 10px;
+}
+
+tr.deactivated, tr.deactivated a {
+	color							: #f00;
+}
+
+table th {
+	text-align				: left;
+	vertical-align		: top;
+}
+
+table td {
+	vertical-align		: top;
+}
+
+td.ltd {
+	text-align				: left;
+}
+
+td.ctd {
+	text-align				: center;
+}
+
+td.rtd {
+	text-align				: right;
+}
+
+.error {
+	color							: #f00;
+}
+.right {
+	float							: right;
+}
+.center {
+	text-align 				: center;
+}
+
+/*------ overview table {{{-------*/
+table.overview {
+	margin						: 5px 0 10px 0;
+	border-collapse		: collapse;
+	background-color	: <?=$clr_light;?>;
+	border						: 1px solid <?=$clr_dark;?>;
+	width	: 100%;
+	background-image		: url(<?=$path;?>images/bg_pane.png);
+	background-position	: top right;
+	background-repeat		: repeat-y;
+}
+
+table.overview th {
+	background-color	: <?=$clr_dark;?>;
+	background-image		: url(<?=$path;?>images/bg_heading.png);
+	background-position	: bottom left;
+	background-repeat		: repeat-x;
+	border-bottom						: 1px solid <?=$clr_dark;?>;
+	color							: #fff;
+	padding						: 5px;
+}
+table.overview th a {
+	color							: #fff;
+	padding						: 5px;
+}
+table.overview th a:hover {
+	color							: <?=$clr_font;?>;
+}
+
+table.overview td {
+	padding						: 3px;
+	border-bottom			: 1px solid <?=$clr_dark;?>;
+}
+/*}}}*/
+
+/*------ form table {{{-------*/
+table#form, table.form {
+	margin						: 5px 0 10px 0;
+	border-collapse		: collapse;
+	background-color	: <?=$clr_light;?>;
+	border						: 1px solid <?=$clr_dark;?>;
+	width	: 100%;
+	background-image		: url(<?=$path;?>images/bg_pane.png);
+	background-position	: top right;
+	background-repeat		: repeat-y;
+}
+
+table#form th, table.form th{
+	padding						: 5px;
+}
+
+table#form th.title, table.form th.title {
+	background-color	: <?=$clr_dark;?>;
+	color							: #fff;
+	background-image		: url(<?=$path;?>images/bg_heading.png);
+	background-position	: bottom left;
+	background-repeat		: repeat-x;
+	border-bottom						: 1px solid <?=$clr_dark;?>;
+}
+
+table#form td, table.form td {
+	padding						: 5px 10px;
+}
+/*}}}*/
+
+/*------ search field {{{-------*/
+div.search {
+	margin						: 5px 0 10px 0;
+	padding						: 12px;
+	padding						: 5px;
+	background-color	: <?=$clr_light;?>;
+	border						: 1px solid <?=$clr_dark;?>;
+	/*
+	position					: absolute;
+	top								: 60px;
+	left 							: 400px;
+	*/
+}
+/*}}}*/
+
+form {
+	margin						: 0;
+	padding						: 0;
+}
+
+input, textarea {
+	font-family				: Arial, sans-serif;
+	font-size					: 12px;
+	background-color	: #fff;
+	color							: #000;
+	border						: 1px solid <?=$clr_font;?>;
+}
+
+input.formbutton {
+	border						: 1px solid <?=$clr_font;?>;
+	background-color	: <?=$clr_dark;?>;
+	color							: #fff;
+	font-weight				: bold;
+}
+
+input.date {
+	background-image	: url(<?=$path;?>images/calendar.gif);
+	background-position : 73px center;
+	background-repeat : no-repeat;
+	width								: 89px;
+	cursor							: pointer;
+}
+
+pre {
+	margin						: 5px 0 10px 0;
+	padding						: 5px;
+	background-color	: <?=$clr_light;?>;
+	border						: 1px solid <?=$clr_dark;?>;
+}

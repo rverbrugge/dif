@@ -1,0 +1,40 @@
+var nlRpcClient = new xmlrpc_client("/xmlrpc");
+
+function subscribe(tree_id, tag, name, email, group)
+{
+	var param = {	tree_id : tree_id,
+								tag : tag,
+								name : name,
+								email : email,
+								group : group};
+	var msg = new xmlrpcmsg("NewsLetter.subscribe");
+	msg.addParam(xmlrpc_encode(param));
+	nlRpcClient.send(msg,0,getNewsLetterRpcResult);
+}
+
+function getNewsLetterRpcResult(data)
+{
+	var result = xmlrpc_decode(data.value());
+
+	var obj = document.getElementById('newsletter'); 
+	if(!obj) return;
+
+	// display content
+	obj.innerHTML = result;//['data'];
+}
+
+function setPlugins(id, dest)
+{
+	switch(id)
+	{
+		case '<?=NewsLetterPlugin::TYPE_TEXT;?>':
+			Effect.BlindUp(dest);
+			break;
+		case '<?=NewsLetterPlugin::TYPE_PLUGIN;?>':
+			Effect.BlindDown(dest);
+			break;
+		default :
+			Effect.BlindUp($(dest));
+			break;
+	}
+}

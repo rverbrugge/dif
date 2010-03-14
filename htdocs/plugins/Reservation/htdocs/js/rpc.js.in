@@ -1,0 +1,218 @@
+
+var getlist = true;
+var originalImage;
+
+function onDateChange(calendar, dateString)
+{
+	calendar.dateField.value = dateString;
+	getTimeList(dateString);
+}
+
+
+function showReservationLoader()
+{
+	var image = "<?=$reservation_htdocs_path;?>images/spinner.gif";					
+	if(! originalImage) originalImage = $('times').getStyle('backgroundImage');
+
+		//$('times').down().fade({duration: 1.0});
+	var obj;
+	if($('times').down())
+		obj = $('times').down();
+	else
+		obj = $('times');
+
+	obj.setStyle({ backgroundImage: 'url(' + image + ')', backgroundPosition: '50% 50%', backgroundRepeat: 'no-repeat'});
+}
+
+function hideReservationLoader()
+{
+	$('times').setStyle({ backgroundImage: (!originalImage) ? originalImage : 'none'});
+
+	if($('times').down())
+		$('times').down().setStyle({ backgroundImage: 'none'});
+}
+
+function showLoader(divname)
+{
+	var image = "<?=$reservation_htdocs_path;?>images/spinner.gif";					
+	$(divname).setStyle({ backgroundImage: 'url(' + image + ')', backgroundPosition: '50% 50%', backgroundRepeat: 'no-repeat'});
+}
+
+function hideLoader(divname)
+{
+	$(divname).setStyle({ backgroundImage: 'none'});
+}
+
+function removeUserpane()
+{
+	if($('userpane'))
+	{
+		$('userpane').slideUp();
+		$('userpane').remove();
+	}
+}
+
+function getUserList(dateString, hour)
+{
+	showReservationLoader();
+	var rpcClient = new xmlrpc_client("/xmlrpc");
+
+	var param = {	tree_id : <?=$tree_id;?>,
+								tag : '<?=$tag;?>',
+								date : dateString,
+								hour : hour};
+	// remove the pane
+	removeUserpane();
+
+	var msg = new xmlrpcmsg("Reservation.getUserList");
+	msg.addParam(xmlrpc_encode(param));
+	rpcClient.send(msg,0,getUserListRpcResult);
+}
+
+function userSearch(dateString, hour, user, page)
+{
+	showLoader('userpane');
+	var rpcClient = new xmlrpc_client("/xmlrpc");
+
+	var param = {	tree_id : <?=$tree_id;?>,
+								tag : '<?=$tag;?>',
+								date : dateString,
+								hour : hour,
+								user : user,
+								page : page};
+
+	var msg = new xmlrpcmsg("Reservation.getUserList");
+	msg.addParam(xmlrpc_encode(param));
+	rpcClient.send(msg,0,getUserSearchRpcResult);
+}
+
+
+function getTimeList(dateString)
+{
+	showReservationLoader();
+	var rpcClient = new xmlrpc_client("/xmlrpc");
+
+	var param = {	tree_id : <?=$tree_id;?>,
+								tag : '<?=$tag;?>',
+								date : dateString};
+
+	var msg = new xmlrpcmsg("Reservation.getTimeList");
+	msg.addParam(xmlrpc_encode(param));
+	rpcClient.send(msg,0,getReservationRpcResult);
+}
+
+function getReservationList()
+{
+	if(getlist)  showReservationLoader();
+
+	var rpcClient = new xmlrpc_client("/xmlrpc");
+
+	var param = {	tree_id : <?=$tree_id;?>,
+								tag : '<?=$tag;?>' };
+
+	var msg = new xmlrpcmsg("Reservation.getReservationList");
+	msg.addParam(xmlrpc_encode(param));
+	rpcClient.send(msg,0,getReservationRpcListResult);
+}
+
+function subscribe(selectDate, hour, usr_id, vip)
+{
+	showReservationLoader();
+	var rpcClient = new xmlrpc_client("/xmlrpc");
+
+	var param = {	tree_id : <?=$tree_id;?>,
+								tag : '<?=$tag;?>',
+								date : selectDate,
+								hour : hour,
+								usr_id : usr_id,
+								vip : vip};
+
+	getlist = false;
+	var msg = new xmlrpcmsg("Reservation.subscribe");
+	msg.addParam(xmlrpc_encode(param));
+	rpcClient.send(msg,0,getReservationRpcResult);
+}
+
+function unsubscribe(id)
+{
+	showReservationLoader();
+	var rpcClient = new xmlrpc_client("/xmlrpc");
+
+	var param = {	id : id };
+
+	getlist = false;
+	var msg = new xmlrpcmsg("Reservation.unsubscribe");
+	msg.addParam(xmlrpc_encode(param));
+	rpcClient.send(msg,0,getReservationRpcResult);
+}
+
+function getUserSelect(usr_id)
+{
+	showLoader($('cbo_usr_free') ? 'cbo_usr_free' : 'userselect');
+	var rpcClient = new xmlrpc_client("/xmlrpc");
+
+	var param = {	tree_id : <?=$tree_id;?>,
+								usr_id : usr_id};
+
+	var msg = new xmlrpcmsg("Reservation.getUserSelection");
+	msg.addParam(xmlrpc_encode(param));
+	rpcClient.send(msg,0,getUserSelectionRpcResult);
+}
+
+function getReservationRpcResult(data)
+{
+	var result = xmlrpc_decode(data.value());
+
+	// display content
+	$('times').update(result);
+
+	if(!getlist && $('list'))  
+		getReservationList();
+	else
+		hideReservationLoader();
+	
+	getlist = true;
+}
+
+function getReservationRpcListResult(data)
+{
+	var result = xmlrpc_decode(data.value());
+	// display content
+	$('list').update(result);
+	hideReservationLoader();
+}
+
+function getUserListRpcResult(data)
+{
+	hideReservationLoader();
+	var result = xmlrpc_decode(data.value());
+
+	// display content
+	var pane = new Element('div', { 'id': 'userpane'});
+	//pane.setStyle({ width:'300px' });
+	pane.hide();
+	pane.update(result);
+	pane.clonePosition($('times'), { setTop: false, setWidth: false, setHeight: false});
+	Element.insert($('times'), {top: pane});
+	if($('searchform')) $('searchform').hide();
+	pane.slideDown();
+	if($('searchform')) $('searchform').appear();
+}
+
+function getUserSearchRpcResult(data)
+{
+	hideLoader('userpane');
+	var result = xmlrpc_decode(data.value());
+
+	// display content
+	$('userpane').update(result);
+}
+
+function getUserSelectionRpcResult(data)
+{
+	hideLoader($('cbo_usr_free') ? 'cbo_usr_free' : 'userselect');
+	var result = xmlrpc_decode(data.value());
+
+	// display content
+	$('userselect').update(result);
+}

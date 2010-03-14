@@ -1,0 +1,105 @@
+div.galhidden {
+	display : none;
+}
+
+div.galimg p.title {
+	font-weight : bold;
+}
+
+div.galimg a {
+	margin					: 0;
+	padding					: 0;
+}
+
+.clear {
+	clear : both;
+}
+
+div.galcomment {
+	border					: 1px solid <?=$clr_dark;?>;
+	background-color	: <?=$clr_light;?>;
+	padding				: 5px;
+}
+div.galcomment  img {
+	margin-bottom				: 10px !important;
+}
+
+div.galimg {
+	text-align : center;
+	float : left;
+	margin				: 5px;
+}
+
+div.galimg a img{
+	border					: 1px solid <?=$clr_dark;?>;
+	display					: block;
+	margin					: 0px;
+	padding					: 0;
+}
+
+div.galimg a:hover img{
+	border					: 1px solid <?=$clr_sub_dark;?>;
+}
+
+a.galimg img{
+	border					: 1px solid <?=$clr_dark;?>;
+	margin					: 0px;
+	padding					: 0;
+}
+
+a.galimg:hover img{
+	border					: 1px solid <?=$clr_sub_dark;?>;
+}
+
+div#galdetail {
+	padding					: 10px 10px 20px 10px;
+	background-color : <?=$clr_light;?>;
+	border					: 1px solid <?=$clr_dark;?>;
+}
+div#galdetail img {
+	display					: block;
+	border					: 1px solid <?=$clr_dark;?>;
+	margin					: 0 0 10px 0;
+}
+
+div#galdetail p {
+	margin					: 10px 0;
+}
+
+div.cmtitem {
+	border						: 1px solid <?=$clr_dark;?>;
+	margin						: 0 0 10px 0;
+	padding						: 5px;
+	background-color	: <?=$clr_site;?>;
+}
+
+h3.cmtname {
+	font-weight 		: strong;
+	padding						: 2px 5px 2px 5px;
+	border-top						: 1px solid <?=$clr_dark;?>;
+	border-right						: 1px solid <?=$clr_dark;?>;
+	border-left						: 1px solid <?=$clr_dark;?>;
+	background-color	: <?=$clr_light;?>;
+	margin-bottom			: 0;
+	margin-right			: 0;
+	margin-left			: 0;
+}
+
+h3.cmtname span.cmtdate {
+	font-weight 		: normal;
+	font-style			: italic;
+	margin-left			: 10px;
+	font-size				: 11px;
+}
+
+div#cmtadd {
+	margin						: 10px 0 10px 0;
+	border						: 1px solid <?=$clr_sub_dark;?>;
+	background-color	: <?=$clr_sub_light;?>;
+	padding						: 5px;
+}
+
+h2#cmttitle {
+	margin-top				:20px;
+}
+

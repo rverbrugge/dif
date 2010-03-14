@@ -1,0 +1,72 @@
+img.lnnoborder {
+	border : none !important;
+}
+
+p.linksintro {
+	font-weight			: bold;
+}
+
+div.linksmain em {
+	color						: <?=$clr_light;?>;
+}
+
+a.linksimg {
+}
+
+a.linksimg img {
+	border					: 1px solid <?=$clr_dark;?>;
+	display					: inline;
+	margin					: 5px;
+	padding					: 0;
+}
+
+a.linksimg:hover img, a.linksel img {
+	border					: 1px solid <?=$clr_sub_dark;?>;
+}
+
+div.linksitem {
+	float							: left;
+	text-align				: center;
+	margin						: 10px;
+}
+
+div.linksitem h3 a {
+	text-decoration		: none;
+}
+div.linksitem a img {
+	border					: 1px solid <?=$clr_dark;?>;
+}
+
+div.linksitem a:hover img, a.linksel img {
+	border					: 1px solid <?=$clr_sub_dark;?>;
+}
+
+table.linksfull {
+	border-collapse	: collapse;
+	border					: 1px solid <?=$clr_dark;?>;
+	width						: 100%;
+	margin					: 5px 0 10px 0;
+}
+
+table.linksfull h3 a {
+	font-size				: 1em;
+	text-decoration		: none;
+}
+table.linksfull h3 a:hover {
+	text-decoration		: underline;
+}
+
+table.linksfull td {
+	padding					: 2px 5px 2px 2px;
+}
+table.linksfull img {
+}
+table.linksfull a img {
+	border					: 1px solid <?=$clr_dark;?>;
+}
+table.linksfull a:hover img {
+	border					: 1px solid <?=$clr_sub_dark;?>;
+}
+table.linksfull td.linksmain {
+	width						: 100%;
+}

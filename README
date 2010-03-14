@@ -1,0 +1,97 @@
+ABOUT DIF
+=========
+
+DIF is a Content Management Framework.
+
+Developed by Ramses Verbrugge 
+dif@huizeverbrugge.nl
+www.huizeverbrugge.nl
+
+DIF is released under the GNU GPL license.
+
+PREREQUISITES
+=============
+DIF needs the following components to run:
+
+PHP5 with the following components enabled:
+	--with-dom
+	--enable-xml
+	--with-xmlrpc
+	--with-xmlreader
+
+TODO
+check &php_xmlrpc_encode in xmlrpc.inc
+
+When you make use of safe mode, be sure to enable save_mode_gid in your php.ini.
+
+Enable population of raw post data in your php.ini by uncommenting the following setting:
+always_populate_raw_post_data = On
+
+STRUCTURE
+=========
+
+A Unix DIF installation consists of three parts:
+     1) The "core" package
+     2) The "data" package
+     3) The "web" package
+
+The core package is the core application. You can put this application 
+anywhere on the server. Typically the package is installed per site
+and is located 1 level below de web root directory.
+
+The data package contains all site specific settings, loggins and secured 
+plugin data. 
+
+The web package is the root of the website with site specific plugins.
+This package contains plugin php files, images, javascript etc.
+
+A typical directory structure looks like this:
+
+/var/www/site/dif					# the untared DIF core package
+/var/www/site/data				# the data package
+/var/www/site/htdocs			# the web package which is the web root of the site
+
+INSTALLING DIF
+==============
+
+1 Get the DIF installation package.
+
+2 Copy the archives to the web root of your server.
+  (Debian default is /var/www/, SuSE default is /srv/www/)
+
+3 Unpack the archives:
+  $ tar xzf dif-<version>.tar.gz
+
+4 If you are installing dif into de web root (where index.php must be) you can skip this step.
+	Rename the htdocs directory to fit your needs and make sure it
+  is accessible by your webserver (for example by creating a virtual
+  host). For example you rename the directory to webroot:
+  $ mv htdocs webroot
+
+5 Set permissions (as root): There are at least two options.
+  These steps will make four directories writable for the webserver:
+  - dif
+  - data
+  - htdocs
+
+	Run these commands as root in the /var/www/site/ directory:
+	# chgrp -R <wwwserver> *
+	# chmod -R g+rw *
+
+	... where <wwwserver> is the name of the group your webserver
+	is running as
+
+6 Check htdocs/index.php and verify that the constant DIF_ROOT is
+	pointing to the location where you placed the dif directory.
+  (See above: "structure")
+
+7 Check data/conf/system.ini for additional settings.
+
+8 In your browser, visit
+  http://[your.site.name]/admin/
+  with the username "admin" and password "manager".
+
+8 Follow the instructions in the install tool
+
+That's it :-)
+

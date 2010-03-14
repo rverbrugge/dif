@@ -1,0 +1,24 @@
+table.form {
+	margin						: 5px 0 10px 0;
+	border-collapse		: collapse;
+	width	: 100%;
+}
+
+table.form th{
+	padding						: 5px;
+	font-weight				: normal;
+}
+
+table.form td {
+	padding						: 5px 10px;
+}
+
+table.radioscale td {
+	padding						: 2px;
+}
+
+table.radioscale th {
+	padding						: 2px;
+	text-align			: center;
+	font-weight			: normal;
+}

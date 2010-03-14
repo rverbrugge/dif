@@ -1,0 +1,42 @@
+table#site {
+	margin				: 10px 0 0 0;
+}
+
+table#site td#sitemain {
+	padding				: 0 0 0 20px;
+}
+
+table#site td#sitemain h2 {
+	margin-top 		: 0 !important;
+}
+
+table#site div.pane {
+	margin				: 0 0 20px 0;
+	padding				: 0 10px 0 10px;
+	border 				: 1px solid <?=$clr_font;?>;
+	background-color	: <?=$clr_light;?>;
+}
+
+table#taglist {
+	border-collapse			: collapse;
+}
+
+table#taglist th {
+	border-bottom 				: 1px solid <?=$clr_font;?>;
+}
+
+ul#sitegroup a {
+	text-decoration : none;
+}
+
+ul#sitegroup a:hover {
+	text-decoration : underline;
+}
+
+.selected {
+	font-weight					: bold;
+}
+
+.disabled {
+	text-decoration: line-through !important;
+}

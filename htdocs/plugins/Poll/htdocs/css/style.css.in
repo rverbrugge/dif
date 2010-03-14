@@ -1,0 +1,50 @@
+p.pollintro {
+	font-weight			: bold;
+}
+
+div.pollmain em {
+	color						: <?=$clr_light;?>;
+}
+
+div.score {
+	background-color	: <?=$clr_sub_light;?>;
+	position : absolute;
+	z-index : 90;
+}
+
+div.scorecard {
+	position : relative;
+	z-index : 100;
+	text-align : center;
+	color					: <?=$clr_font;?>;
+}
+
+td.scorecont {
+	border	: 1px solid <?=$clr_sub_dark;?>;
+	text-align : left;
+}
+
+div#pollitem table {
+	width							: 100%;
+}
+
+div#pollitem td.votes {
+	text-align				: right;
+}
+
+div#pollitem {
+	/*background-color	: <?=$clr_sub_light;?>;*/
+	border	: 1px solid <?=$clr_sub_dark;?>;
+	margin						: 5px;
+	padding						: 3px;
+}
+
+div#pollitem a {
+	display						: block;
+	padding						: 3px 5px 3px 5px;
+}
+
+div#pollitem a:hover {
+	background-color	: <?=$clr_sub_light;?>;
+}
+

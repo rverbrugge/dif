@@ -1,0 +1,45 @@
+function showPollLoader()
+{
+	var image = "<?=$poll_htdocs_path;?>images/spinner.gif";
+	$('pollloader').setStyle({ backgroundImage: 'url(' + image + ')', backgroundPosition: '50% 50%', backgroundRepeat: 'no-repeat'});
+}
+
+/*
+function hidePollLoader()
+{
+	$('pollloader').setStyle({ backgroundImage: 'none'});
+}
+*/
+
+function vote(id)
+{
+	showPollLoader();
+	var rpcClient = new xmlrpc_client("/xmlrpc");
+	var msg = new xmlrpcmsg("Poll.vote");
+	msg.addParam(xmlrpc_encode(id));
+	rpcClient.send(msg,0,getPollRpcResult);
+}
+
+function getPollRpcResult(data)
+{
+	var result = xmlrpc_decode(data.value());
+	var content = "";
+
+	if(typeof(result)=='string')
+	{
+		content = result;
+	}
+	else
+	{
+		// set cookie
+		var cookie = result['cookie'];
+		var expireDate = new Date();
+		expireDate.setMonth(expireDate.getMonth()+6);
+		document.cookie = cookie['key'] + "=" +escape( cookie['value'] ) + ";expires=" + expireDate.toGMTString() +";path=/";
+		content = result['data'];
+	}
+
+	// display content
+	$('pollitem').update(content);
+	//hidePollLoader();
+}

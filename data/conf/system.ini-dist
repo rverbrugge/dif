@@ -1,0 +1,81 @@
+
+; default database connection 
+; e.g. dsn = "mysql://user:password@localhost/databasename"
+dsn = ""
+
+; relative path to administration section
+admin_path = "admin"
+
+; relative path from dif_web_root to xml rpc server
+rpc_path = "xmlrpc"
+
+; relative path from dif_root to temp directory (to store temporarily files for plugin and theme installation)
+temp_path = "temp"
+
+; relative path from dif_root to import directory (location from where a plugin can import files)
+import_path = "import"
+
+; relative path from diff_system_root to plugin files directory (to store files related to plugins)
+file_path = "plugins"
+
+; relative path from dif_web_root to store plugin content files 
+content_path = "dbfiles"
+
+; relative path from dif_web_root to store plugin cache files 
+cache_path = "dbcache"
+
+; Location of cache files
+path = "cache"
+
+; specify if caching is enabled
+enable_caching = true
+
+; expiration time of cache file (in minutes)
+expiration = 120
+
+; xml file with administration menu
+admin_menu = "menu.xml"
+
+; admin template theme
+admin_theme = "AdminTheme"
+
+; login plugin (handles login form)
+login_plugin = "Login"
+
+; default email address used by system to send email
+email_address = ""
+email_host = ""
+email_username = ""
+email_password = ""
+
+; session name to store user info
+session_name = "dif"
+
+; comma separated list of ip addresses that are allowed to log into admin section
+; e.g. admin_section_ip_allow = 192.168.1.13,192.168.1.1
+admin_section_ip_allow = ""
+
+; comma separated list of ip addresses that are allowed to login as administrator 
+; e.g. admin_login_ip_allow = 192.168.1.13,192.168.1.1
+admin_login_ip_allow = ""
+
+; root login user
+login_enable = 1
+login_name = "System Administrator"
+login_username = "system"
+login_password = "ThI71ofPChI6g"
+
+; comma separated list of message types that need to be logged
+log_enable = info,warning,error
+log_file = access.log
+log_size = 2MB
+
+; specify to which version of DIF the plugins, extensions and themes have to be compatible with
+; incompatible plugins will be disabled
+required_dif_version = 1.2
+
+; this section contains special DIF settings 
+[difsettings]
+; variables that must be overwritten by a new version
+; Variables in sections can be specified as <section>:<variable>
+force[] = "required_dif_version"

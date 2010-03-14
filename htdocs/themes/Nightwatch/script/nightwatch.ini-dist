@@ -1,0 +1,49 @@
+template = site.tpl
+template_breadcrumb = breadcrumb.tpl
+stylesheet = css/style.css
+
+; define main tag for plugins that are not connected to a tag (like login plugin)
+main_tag = tpl_content
+
+; specify which tags are available for plugin attachment
+; tag definition <tagname> = <title>
+[tags]
+tpl_header = Header
+tpl_menu = Menu
+tpl_content = Hoofdpaneel
+tpl_right = Rechts
+tpl_submenu = Submenu
+tpl_currmenu = Menu zelfde niveau
+tpl_footer = Footer
+;tag_left = tpl_leftpane,Paneel Links
+
+; specify which default plugins has to be assigned to tags
+; <tagname> = <plugin>
+[tagplugin]
+tpl_header = Banner
+tpl_menu = Menu
+tpl_submenu = SubMenu
+tpl_currmenu = CurrentMenu
+tpl_footer = Page
+
+; specify which images have to be loaded
+[images]
+; default theme images <filename>,<width>,<height>
+
+; variables to be available when .in files are parsed (eg stylesheet)
+[in_vars]
+clr_html = #191919
+clr_site = #fff
+
+clr_font = #666
+clr_dark = #363636
+clr_light = #999
+
+clr_sub_font =  #fe0201
+clr_sub_dark =  #363636
+clr_sub_light = #eee
+
+menu_width = auto
+menu_item_width = auto
+menu_line_height = 2em
+menu_line_height_up = 2.2em

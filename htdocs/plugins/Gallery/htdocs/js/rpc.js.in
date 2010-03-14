@@ -1,0 +1,34 @@
+
+function showCommentLoader()
+{
+	var image = "<?=$gallery_htdocs_path;?>images/spinner.gif";
+	$('comm_text').setStyle({ backgroundImage: 'url(' + image + ')', backgroundPosition: '50% 50%', backgroundRepeat: 'no-repeat'});
+}
+
+function hideCommentLoader()
+{
+	$('comm_text').setStyle({ backgroundImage: 'none'});
+}
+
+
+function addComment(id, name, text)
+{
+	showCommentLoader();
+	var rpcClient = new xmlrpc_client("/xmlrpc");
+	var param = {	gal_id : id,
+								name : name,
+								text : text};
+
+	var msg = new xmlrpcmsg("Gallery.addComment");
+	msg.addParam(xmlrpc_encode(param));
+	rpcClient.send(msg,0,getNewsRpcResult);
+	//new Ajax.Updater('commenttag', "/xmlrpc", { method: 'News.addComment', parameters: param });
+}
+
+function getNewsRpcResult(data)
+{
+	var result = xmlrpc_decode(data.value());
+
+	$('commenttag').update(result);
+	hideCommentLoader();
+}

@@ -1,0 +1,61 @@
+
+/**************************************************************
+
+	SlideShow
+	v 1.2
+
+**************************************************************/
+
+.slideshow {
+	border: 1px solid #ccc;
+	width: 450px;
+	height: 300px;
+}
+
+.loading {
+	background: url(/images/loading.gif) center no-repeat;
+}
+
+.slideshowThumbnail {
+	outline: none;
+}
+
+.slideshowThumbnail img {
+	border: 1px solid white;
+	padding: 5px;
+}
+
+a:hover.slideshowThumbnail img {
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+.current img {
+	border: 1px solid red;
+	padding: 5px;
+}
+
+.outline {
+	border: 1px solid orange;
+	z-index: 0;
+	position: absolute;
+}
+
+#thumbnails {
+	width: 230px;
+	float: left;
+}
+
+a {
+	color: orange;
+	text-decoration: none;
+	outline: none;
+}
+
+a:hover {
+	color: #999;
+	text-decoration: none;
+}
+
+/*************************************************************/
+

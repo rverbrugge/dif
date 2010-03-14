@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<tree>
+	<item id="1" url="structure" class="Site" role="backend" external="0" active="1" startpage="1" name="Site structure" />
+
+	<item id="2.2" url="addon" class="" role="utility" external="0" active="1" name="Addons">
+		<item id="2.2.1" url="plugins" class="PluginHandler" role="utility" external="0" active="1" name="Plugins" />
+		<item id="2.2.2" url="themes" class="ThemeHandler" role="utility" external="0" active="1" name="Themes" />
+		<item id="2.2.3" url="extensions" class="ExtensionHandler" role="utility" external="0" active="1" name="Extensions" />
+	</item>
+
+	<item id="2.1" url="users" class="" role="admin" external="0" active="1" name="Users">
+		<item id="2.1.1" url="accounts" class="User" role="admin" external="0" active="1" name="User accounts" />
+		<item id="2.1.2" url="groups" class="UserGroup" role="admin" external="0" active="1" name="User groups" />
+	</item>
+
+	<item id="2" url="settings" class="" role="utility" external="0" active="1" name="Settings">
+
+		<!--item id="2.3" url="system" class="" role="admin" external="0" active="1" name="System management"-->
+			<item id="2.3.1" url="websites" class="SiteGroup" role="admin" external="0" active="1" name="Websites" />
+			<item id="2.3.2" url="logging" class="Logging" role="admin" external="0" active="1" name="Event Logging" />
+			<item id="2.3.3" url="update" class="UpdateHandler" role="admin" external="0" active="1" name="System update" />
+			<item id="2.3.4" url="setup" class="Setup" role="admin" external="0" active="1" name="System Setup" />
+		<!--/item-->
+
+	</item>
+
+	<item id="5" url="http://sourceforge.net/projects/difcms/" class="" role="backend" external="1" active="1" name="About" />
+
+	<item id="6" url="logout" class="Login" role="backend" external="0" active="1" name="Logout" />
+
+</tree>

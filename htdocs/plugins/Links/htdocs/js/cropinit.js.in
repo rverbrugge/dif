@@ -1,0 +1,16 @@
+
+// setup the callback function
+function onEndCrop( coords, dimensions ) {
+	$( 'x1' ).value = coords.x1;
+	$( 'y1' ).value = coords.y1;
+	$( 'x2' ).value = coords.x2;
+	$( 'y2' ).value = coords.y2;
+	$( 'width' ).value = dimensions.width;
+	$( 'height' ).value = dimensions.height;
+}
+
+function loadCropImage<?=$imgTag;?>( imgTag ) {
+	new Cropper.Img( imgTag, { displayOnInit: 1, minWidth: <?=$image_width;?>, minHeight: <?=$image_height;?>, ratioDim: { x: <?=$image_width;?>, y: <?=$image_height;?> }, onEndCrop: onEndCrop , onloadCoords: {x1: <?=$img_x;?>, y1: <?=$img_y;?>, x2: <?=$img_x+$img_width;?>, y2: <?=$img_y+$img_height;?>}} );
+}
+
+Event.observe( window, 'load', function() { loadCropImage<?=$imgTag;?>( '<?=$imgTag;?>'); } );

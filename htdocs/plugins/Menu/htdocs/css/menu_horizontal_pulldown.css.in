@@ -1,0 +1,41 @@
+#<?=$cssid;?>, #<?=$cssid;?> ul { /* all lists */
+	padding					: 0;
+	margin					: 0;
+	list-style			: none;
+	line-height			: <?=$menu_line_height_up;?>;
+}
+
+#<?=$cssid;?> li { /* all list items */
+	list-style-type	: none;
+	float 					: left;
+	/*width						: <?=$menu_width;?>;*/
+	/*margin					: 0 0 -1px 0;*/
+	padding					: 0;
+}
+
+#<?=$cssid;?> li ul { /* second-level lists */
+	position 				: absolute;
+	left						: -999em;
+	width						: <?=$menu_width;?>;
+}
+
+#<?=$cssid;?> li ul ul { /* third-and-above-level lists */
+	left						: -999em;
+	margin					: -<?=$menu_line_height_up;?> 0 0 <?=$menu_width;?>;
+}
+
+#<?=$cssid;?> a {
+	display 				: block;
+	<?if(isset($menu_item_width) && $menu_item_width):?>width					: <?=$menu_item_width;?>;<?endif;?> 
+	height			: <?=$menu_line_height;?>;
+	background-image : url(/images/blank.gif);
+}
+
+#<?=$cssid;?> li:hover ul ul, #<?=$cssid;?> li:hover ul ul ul, #<?=$cssid;?> li.sfhover ul ul, #<?=$cssid;?> li.sfhover ul ul ul {
+	left						: -999em;
+}
+
+#<?=$cssid;?> li:hover ul, #<?=$cssid;?> li li:hover ul, #<?=$cssid;?> li li li:hover ul, #<?=$cssid;?> li.sfhover ul, #<?=$cssid;?> li li.sfhover ul, #<?=$cssid;?> li li li.sfhover ul { /* lists nested under hovered list items */
+	left						: auto;
+}
+

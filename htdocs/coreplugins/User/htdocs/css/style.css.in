@@ -1,0 +1,20 @@
+table.multibox {
+	width						: 100%;
+}
+
+table.multibox select {
+	width						: 325px;
+}
+
+
+table.multibox td.nav {
+	vertical-align		: middle;
+	text-align				: center;
+	width						: 100%;
+}
+
+table.multibox td.nav input {
+	margin						: 5px auto 5px auto;
+	display						: block;
+}
+

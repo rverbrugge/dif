@@ -1,0 +1,147 @@
+
+
+div#datevalue { display : none; }
+
+div#times table {
+	border-collapse		: collapse;
+	background-color	: <?=$clr_sub_light;?>;
+	width : 100%;
+}
+
+div#times table td {
+	border						: 1px solid <?=$clr_dark;?>;
+	padding						: 3px 5px 3px 5px;
+}
+div#times table td.time {
+	width							: 35px;
+}
+
+div#times table th {
+	border-bottom			: 2px solid <?=$clr_dark;?>;
+	padding						: 3px 5px 3px 5px;
+	background-color	: <?=$clr_site;?>;
+}
+
+
+div#times img {
+	border						: none;
+	display						: inline;
+	vertical-align		: bottom;
+}
+
+div#userpane div#searchform {
+	/*text-align				: center;*/
+	border-bottom			: 1px solid <?=$clr_dark;?>;
+	border-top			: 1px solid <?=$clr_dark;?>;
+	margin						: 5px;
+	padding						: 5px;
+}
+div#userpane p#navigation {
+	margin						: 5px;
+	letter-spacing		: 2px;
+}
+
+div#userpane p#navigation a {
+	margin						: 0 3px 0 3px;
+}
+div#userpane a#close {
+	float							: right;
+}
+div#userpane a#close img {
+	border						: none;
+}
+
+/*
+div#periodlist {
+	float							: right;
+	padding						: 5px;
+	margin						: 5px;
+}
+
+div#list {
+	background-color	: <?=$clr_sub_light;?>;
+	border						: 1px solid <?=$clr_dark;?>;
+}
+*/
+div#list ul {
+	margin						: 5px 5px 5px 15px;
+	padding						: 5px 5px 5px 15px;
+}
+
+div#list li {
+	padding						: 3px;
+}
+
+div.datepicker {
+	text-align: center;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	margin-top: 0px;
+	margin-bottom: 20px;
+	padding: 10px;
+	border					: 1px solid <?=$clr_dark;?>;
+	background-color	: <?=$clr_sub_light;?>;
+	font-weight			: strong;
+	width 					: 200px;
+}
+
+div.datepicker:hover {
+	background-color	: <?=$clr_site;?>;
+	color							: <?=$clr_sub_font;?>;
+}
+
+div#dateselect {
+	width							: 200px;
+}
+
+hr#datespace {
+	color : <?=$clr_sub_dark;?>;
+	background-color: <?=$clr_sub_dark;?>;
+	height: 1px;
+	border : none;
+	margin						: 15px 0 15px 0;
+}
+
+h2.dateheading {
+	color							: <?=$clr_sub_font;?>;
+	border-bottom			: 1px solid <?=$clr_sub_dark;?>;
+	margin-top			: 15px;
+	margin-bottom			: 6px;
+}
+input#datevalue {
+	background-image	: url(<?=$plugin_path;?>images/calendar.gif);
+	background-position : 73px center;
+	background-repeat : no-repeat;
+	width								: 89px;
+	cursor							: pointer;
+}
+
+table.multibox {
+	width						: 100%;
+}
+
+table.multibox select {
+	width						: 325px;
+}
+
+
+table.multibox td.nav {
+	vertical-align		: middle;
+	text-align				: center;
+	width						: 100%;
+}
+
+table.multibox td.nav input {
+	margin						: 5px auto 5px auto;
+	display						: block;
+}
+
+div#userpane {
+	background-color	: <?=$clr_sub_light;?>;
+	border						: 1px solid <?=$clr_dark;?>;
+	padding						: 5px;
+	position					: absolute;
+	top								: 340px;
+	margin-left				: 80px;
+	width							: 300px;
+}

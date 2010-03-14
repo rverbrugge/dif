@@ -1,0 +1,15 @@
+div#bnr<?=$banner['tag'];?> {
+	position 	: relative;
+	background-image			: url(<?=$banner['image']['src'];?>);
+	background-repeat			: no-repeat;
+	width			: <?=$banner['image']['width'];?>px; 
+	height		: <?=$banner['image']['height'];?>px;
+}
+
+div#bnr<?=$banner['tag'];?> img {
+	border		: none;
+	display		: block;
+	width			: <?=$banner['image']['width'];?>px; 
+	height		: <?=$banner['image']['height'];?>px;
+}
+

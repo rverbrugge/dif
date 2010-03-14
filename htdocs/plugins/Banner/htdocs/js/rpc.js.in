@@ -1,0 +1,42 @@
+var rpcType = new Array();
+rpcType[<?=Banner::DISP_ORDER_LINEAR;?>] = 'Banner.getLinear';
+rpcType[<?=Banner::DISP_ORDER_RANDOM;?>] = 'Banner.getRandom';
+
+var bannerRpcClient = new xmlrpc_client("/xmlrpc");
+
+var id;
+function getNextBanner(id, tree_id, tag, type)
+{
+	if(!rpcType[type]) type = <?=Banner::DISP_ORDER_RANDOM;?>;
+
+	var param = {	current : id,
+								tag : tag,
+								tree_id : tree_id};
+
+	var msg = new xmlrpcmsg(rpcType[type]);
+	msg.addParam(xmlrpc_encode(param));
+	bannerRpcClient.send(msg,0,getRpcResult);
+}
+
+function getRpcResult(data, state, extra)
+{
+	var result = xmlrpc_decode(data.value());
+	var id = result['id'];
+	var tag = result['tag'];
+	var tree_id = result['tree_id'];
+	var type = result['display_order'];
+
+	switch(parseInt(result['display']))
+	{
+		case <?=Banner::DISP_CROSS;?> :
+			blendImage(result['image'], result['name'], result['url'], tag);
+			break;
+		case <?=Banner::DISP_SWAP;?> :
+			swapImage(result['image'], result['name'], result['url'], tag);
+			break;
+		default :
+			showImage(result['image'], result['name'], result['url'], tag);
+	}
+
+	setTimeout("getNextBanner("+id+", "+tree_id+", '"+tag+"', "+type+")", result['transition_speed']*1000);
+}

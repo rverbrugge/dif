@@ -1,0 +1,2 @@
+if (window.attachEvent) Event.observe( window, 'load', function() { sfHover('<?=$cssid;?>'); }, false );
+//if (window.attachEvent) window.attachEvent("onload", sfHover('<?=$cssid;?>'));

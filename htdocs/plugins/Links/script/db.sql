@@ -1,0 +1,53 @@
+CREATE TABLE IF NOT EXISTS `links` (
+  `lnk_id` mediumint(8) NOT NULL auto_increment,
+  `lnk_tree_id` mediumint(9) NOT NULL default '0',
+  `lnk_tag` varchar(100) default NULL,
+  `lnk_active` tinyint(1) default '1',
+  `lnk_weight` int(11) default '0',
+  `lnk_url` varchar(100) default NULL,
+  `lnk_ref_tree_id` mediumint(9) default NULL,
+  `lnk_name` varchar(100) default NULL,
+  `lnk_intro` varchar(255) default NULL,
+  `lnk_text` text,
+  `lnk_image` varchar(255) default NULL,
+  `lnk_thumbnail` varchar(255) default NULL,
+  `lnk_img_x` int(11) default NULL,
+  `lnk_img_y` int(11) default NULL,
+  `lnk_img_width` int(11) default '0',
+  `lnk_img_height` int(11) default '0',
+  `lnk_usr_id` mediumint(9) NOT NULL default '0',
+  `lnk_own_id` mediumint(9) default NULL,
+  `lnk_create` datetime default NULL,
+  `lnk_ts` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`lnk_id`),
+  KEY `idx_tree` (`lnk_tree_id`,`lnk_tag`)
+) ENGINE=MyISAM AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `links_overview_settings` (
+  `set_tree_id` int(11) NOT NULL,
+  `set_tag` varchar(25) NOT NULL,
+  `set_display` int(11) default NULL,
+  `set_target` varchar(50) default NULL,
+  `set_image_border` tinyint(1) default '1',
+  `set_image_width` int(11) default NULL,
+  `set_image_height` int(11) default NULL,
+  `set_image_max_width` int(11) default NULL,
+  `set_rows` int(11) default NULL,
+  `set_usr_id` int(11) default NULL,
+  `set_own_id` int(11) default NULL,
+  `set_create` datetime default NULL,
+  `set_ts` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`set_tree_id`,`set_tag`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `links_settings` (
+  `lnk_id` mediumint(8) NOT NULL auto_increment,
+  `lnk_display` tinyint(1) default '1',
+  `lnk_image_width` int(11) default NULL,
+  `lnk_image_height` int(11) default NULL,
+  `lnk_image_max_width` int(11) default NULL,
+  `lnk_rows` int(11) default NULL,
+  `lnk_usr_id` mediumint(9) NOT NULL default '0',
+  `lnk_own_id` mediumint(9) default NULL,
+  `lnk_create` datetime default NULL,
+  `lnk_ts` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`lnk_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;

@@ -1,0 +1,14 @@
+div#siteselect img {
+	display				: inline;
+	border				: none;
+}
+
+/*
+div#siteselect a img {
+	border : 1px solid <?=$clr_font;?>;
+}
+
+div#siteselect a:hover img{
+	border : 1px solid <?=$clr_sub_font;?>;
+}
+*/
