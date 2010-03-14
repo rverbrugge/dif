@@ -5,7 +5,7 @@ DIF is a Content Management Framework.
 
 Developed by Ramses Verbrugge 
 dif@huizeverbrugge.nl
-www.huizeverbrugge.nl
+http://github.com/rverbrugge/dif
 
 DIF is released under the GNU GPL license.
 
@@ -13,11 +13,8 @@ PREREQUISITES
 =============
 DIF needs the following components to run:
 
-PHP5 with the following components enabled:
-	--with-dom
-	--enable-xml
-	--with-xmlrpc
-	--with-xmlreader
+- PHP5 
+- MySql
 
 TODO
 check &php_xmlrpc_encode in xmlrpc.inc
@@ -31,18 +28,18 @@ STRUCTURE
 =========
 
 A Unix DIF installation consists of three parts:
-     1) The "core" package
+     1) The "dif" package
      2) The "data" package
-     3) The "web" package
+     3) The "htdocs" package
 
-The core package is the core application. You can put this application 
+The dif package is the core application. You can put this application 
 anywhere on the server. Typically the package is installed per site
-and is located 1 level below de web root directory.
+and is located in the parent direcotry of the web root.
 
-The data package contains all site specific settings, loggins and secured 
+The data package contains all site specific settings, loggings and secured 
 plugin data. 
 
-The web package is the root of the website with site specific plugins.
+The htdocs package is the root of the website with site specific plugins.
 This package contains plugin php files, images, javascript etc.
 
 A typical directory structure looks like this:
@@ -50,6 +47,9 @@ A typical directory structure looks like this:
 /var/www/site/dif					# the untared DIF core package
 /var/www/site/data				# the data package
 /var/www/site/htdocs			# the web package which is the web root of the site
+
+Note:
+If you do not have access to the parent directory of the web root, you can place all the components in the web root itself.
 
 INSTALLING DIF
 ==============
@@ -60,7 +60,7 @@ INSTALLING DIF
   (Debian default is /var/www/, SuSE default is /srv/www/)
 
 3 Unpack the archives:
-  $ tar xzf dif-<version>.tar.gz
+  $ tar -xzf dif-<version>.tar.gz
 
 4 If you are installing dif into de web root (where index.php must be) you can skip this step.
 	Rename the htdocs directory to fit your needs and make sure it
@@ -85,11 +85,9 @@ INSTALLING DIF
 	pointing to the location where you placed the dif directory.
   (See above: "structure")
 
-7 Check data/conf/system.ini for additional settings.
-
-8 In your browser, visit
+7 In your browser, visit
   http://[your.site.name]/admin/
-  with the username "admin" and password "manager".
+  with the username "system" and password "manager".
 
 8 Follow the instructions in the install tool
 
