@@ -54,8 +54,8 @@ abstract class Theme
 	 * @var array
 	 */
 	private $headers;
-	private $cssFiles;
-	private $jsFiles;
+	private $cssFiles = array();
+	private $jsFiles = array();
 
 
 	/**
@@ -694,9 +694,8 @@ abstract class Theme
 		$director = Director::getInstance();
 		$siteGroup = $director->siteGroup;
 		//FIXME remove user specific javascript
-		$fileprefix = $request->getUrl().$siteGroup->getCurrentId().$this->getClassName();
-		$stylesheet = md5($fileprefix.'stylesheet').".css";
-		$javascript = md5($fileprefix.'javascript').".js";
+		$stylesheet = $this->getClassName()."stylesheet.css";
+		$javascript = $this->getClassName()."javascript.js";
 
 		// write content to file
 		if(!$cache->isCached($stylesheet));
@@ -707,7 +706,7 @@ abstract class Theme
 			$stylesheetDestFile = $this->getCachePath(true).$stylesheet;
 			if($cache->isCacheEnabled())
 			{
-				$stylesheetCacheFile = $cache->save($this->cssFiles, $stylesheet);
+				$stylesheetCacheFile = $cache->save(join("\n", $this->cssFiles), $stylesheet);
 				copy($stylesheetCacheFile, $stylesheetDestFile);
 				chmod($stylesheetDestFile, 0644);
 			}
@@ -723,7 +722,7 @@ abstract class Theme
 			$javascriptDestFile = $this->getCachePath(true).$javascript;
 			if($cache->isCacheEnabled())
 			{
-				$javascriptCacheFile = $cache->save($this->jsFiles, $javascript);
+				$javascriptCacheFile = $cache->save(join("\n",$this->jsFiles), $javascript);
 				copy($javascriptCacheFile, $javascriptDestFile);
 				chmod($javascriptDestFile, 0644);
 			}

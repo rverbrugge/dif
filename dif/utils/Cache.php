@@ -132,7 +132,7 @@ class Cache extends Observer
 	public function isCached($postfix='')
 	{
 		//if(!$this->isCacheable()) return false;
-		if(!$this->cacheEnabled) return;
+		if(!$this->isCacheEnabled()) return;
 		$view = ViewManager::getInstance();
 
 		$filename = $this->path.md5($this->url.$postfix.$view->getType());
@@ -153,7 +153,7 @@ class Cache extends Observer
 	public function save($content, $postfix='')
 	{
 		// only save if caching is enabled in config file
-		if(!$this->cacheEnabled) return;
+		if(!$this->isCacheEnabled()) return;
 		$view = ViewManager::getInstance();
 
 		$url = md5($this->url.$postfix.$view->getType());
